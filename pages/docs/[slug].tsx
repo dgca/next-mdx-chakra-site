@@ -25,6 +25,7 @@ export default function DocsPage({ title, markdown, sidebarContent }: Props) {
         py={12}
         alignItems="stretch"
         borderRight="1px solid rgba(0, 0, 0, 0.1)"
+        w="25ch"
       >
         {sidebarContent.map((item) => (
           <Text

@@ -1,6 +1,6 @@
 import { readdirSync } from "fs";
 import path from "path";
-import Link from "next/link";
+import NextLink from "next/link";
 import { GetStaticProps } from "next";
 import {
   Container,
@@ -9,6 +9,7 @@ import {
   Box,
   Stack,
   StackDivider,
+  Link,
 } from "@chakra-ui/react";
 import { format, parse } from "date-fns";
 import { parseFileByPath } from "@/lib/md/server";
@@ -28,44 +29,38 @@ type Props = {
 
 export default function Blog({ blogs }: Props) {
   return (
-    <main>
-      <Container>
-        <Heading mb={8}>Blog</Heading>
-        <Stack divider={<StackDivider />} spacing="4">
-          {blogs.map((post) => (
-            <Stack key={post.id} spacing="1">
-              <Box>
-                <Text
-                  fontWeight="medium"
-                  as={Link}
-                  href={`/blog/${post.slug}`}
-                  color="blue.500"
-                  fontSize="1.2rem"
-                  _hover={{
-                    color: "blue.600",
-                    textDecoration: "underline",
-                  }}
-                >
-                  {post.title}
-                </Text>
-                <Text color="subtle">Published {post.date}</Text>
-              </Box>
-              <Text
-                color="muted"
-                sx={{
-                  "-webkit-box-orient": "vertical",
-                  "-webkit-line-clamp": "2",
-                  overflow: "hidden",
-                  display: "-webkit-box",
-                }}
+    <Container as="main" py={12}>
+      <Heading mb={8}>Blog</Heading>
+      <Stack divider={<StackDivider />} spacing="4">
+        {blogs.map((post) => (
+          <Stack key={post.id} spacing="1">
+            <Box>
+              <Link
+                fontWeight="medium"
+                as={NextLink}
+                href={`/blog/${post.slug}`}
+                color="blue.500"
+                fontSize="1.2rem"
               >
-                {post.description}
-              </Text>
-            </Stack>
-          ))}
-        </Stack>
-      </Container>
-    </main>
+                {post.title}
+              </Link>
+              <Text color="subtle">Published {post.date}</Text>
+            </Box>
+            <Text
+              color="muted"
+              sx={{
+                "-webkit-box-orient": "vertical",
+                "-webkit-line-clamp": "2",
+                overflow: "hidden",
+                display: "-webkit-box",
+              }}
+            >
+              {post.description}
+            </Text>
+          </Stack>
+        ))}
+      </Stack>
+    </Container>
   );
 }
 

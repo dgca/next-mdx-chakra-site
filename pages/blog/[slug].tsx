@@ -1,15 +1,7 @@
 import { readdirSync } from "fs";
 import path from "path";
-import Link from "next/link";
 import { GetStaticPaths, GetStaticProps } from "next";
-import {
-  Container,
-  Heading,
-  Text,
-  Box,
-  Stack,
-  StackDivider,
-} from "@chakra-ui/react";
+import { Container, Heading, Text } from "@chakra-ui/react";
 import { format, parse } from "date-fns";
 import { parseFileByPath, renderMarkdown } from "@/lib/md/server";
 import { MDXRenderer } from "@/lib/md/client";
@@ -23,13 +15,11 @@ type Props = {
 
 export default function BlogPost({ author, title, markdown }: Props) {
   return (
-    <main>
-      <Container>
-        <Heading mb={8}>{title}</Heading>
-        <Text color="muted">Published by {author}</Text>
-        <MDXRenderer markdown={markdown} />
-      </Container>
-    </main>
+    <Container as="main" py={12}>
+      <Heading mb={8}>{title}</Heading>
+      <Text color="muted">Published by {author}</Text>
+      <MDXRenderer markdown={markdown} />
+    </Container>
   );
 }
 
