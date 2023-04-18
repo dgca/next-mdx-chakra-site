@@ -1,11 +1,13 @@
 import type { AppProps } from "next/app";
-import { Box, ChakraProvider, Flex } from "@chakra-ui/react";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
 import Head from "next/head";
 import { Nav } from "@/components/Nav/Nav";
-import "highlight.js/styles/atom-one-dark.css";
+
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 import css from "highlight.js/lib/languages/css";
+import { MDXProvider } from "@/lib/md/client";
+import "highlight.js/styles/atom-one-dark.css";
 
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("css", css);
@@ -20,10 +22,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ChakraProvider>
-        <Flex flexDirection="column" minH="100vh">
-          <Nav />
-          <Component {...pageProps} />
-        </Flex>
+        <MDXProvider>
+          <Flex flexDirection="column" minH="100vh">
+            <Nav />
+            <Component {...pageProps} />
+          </Flex>
+        </MDXProvider>
       </ChakraProvider>
     </>
   );

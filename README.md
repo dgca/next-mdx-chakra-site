@@ -36,3 +36,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+<!-- <YouTube src="https://www.youtube.com/watch?v=SBxpeuxUiOA" /> -->
+
+<!--
+
+# Project demo
+
+- Project structure
+- _app.tsx
+  - Set up syntax highlighting with hljs
+  - Add providers
+- Blogs list page
+  - getStaticProps - Generates the blogs list based on the markdown files in content/blog
+- Blog page
+  - getStaticProps - Generates the blogs list based on the markdown files in content/blog
+  - getStaticPaths - Generates a page for each blog post on the site
+- Documentation
+  - sidebar - Parsing multiple pages' content to generate dynamic content
+- Adding custom components
+
+-->

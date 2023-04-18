@@ -66,9 +66,13 @@ export default function Blog({ blogs }: Props) {
 
 const CONTENT_PATH = path.join(process.cwd(), "content", "blog");
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+// This function gets called at build time and it will create a list of blog
+// posts to be displayed on the blog page.
+export const getStaticProps: GetStaticProps = async () => {
   const blogs = readdirSync(CONTENT_PATH)
+    // Only include md(x) files
     .filter((item) => item.endsWith(".mdx"))
+    // For each item, parse the frontmatter and date to create the blog list
     .map((item, i) => {
       const builtPath = path.join(CONTENT_PATH, item);
       const { frontMatter } = parseFileByPath(builtPath);

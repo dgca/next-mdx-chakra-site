@@ -12,8 +12,8 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { MDXProvider as BaseMDXProvider } from "@mdx-js/react";
-import { ReactNode, ComponentProps, useState, useRef, useEffect } from "react";
-import { kebabCase } from "lodash-es";
+import { ReactNode, ComponentProps } from "react";
+// import { YouTube } from "@/components/YouTube/YouTube";
 
 const DEFAULT_TEXT_PROPS = {
   fontSize: "md",
@@ -78,6 +78,11 @@ const providerComponents = {
       <img {...props} alt="" />
     </Box>
   ),
+  // YouTube: (props: ComponentProps<typeof YouTube>) => (
+  //   <Box my={8}>
+  //     <YouTube {...props} />
+  //   </Box>
+  // ),
 };
 
 export function MDXProvider({ children }: { children: ReactNode }) {
