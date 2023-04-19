@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     .filter((item) => item.endsWith(".mdx"))
     .map((filename) => {
       const fullPath = path.join(CONTENT_PATH, filename);
-      const frontMatter = parseFileByPath(fullPath).frontMatter;
+      const { frontMatter } = parseFileByPath(fullPath);
       const label = frontMatter.label ?? frontMatter.title;
       return {
         route: filename.replace(/\.mdx?$/, ""),

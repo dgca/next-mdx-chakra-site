@@ -13,6 +13,7 @@ import {
 import NextLink from "next/link";
 import { MDXProvider as BaseMDXProvider } from "@mdx-js/react";
 import { ReactNode, ComponentProps } from "react";
+import { YouTube } from "@/components/YouTube/YouTube";
 // import { YouTube } from "@/components/YouTube/YouTube";
 
 const DEFAULT_TEXT_PROPS = {
@@ -78,11 +79,11 @@ const providerComponents = {
       <img {...props} alt="" />
     </Box>
   ),
-  // YouTube: (props: ComponentProps<typeof YouTube>) => (
-  //   <Box my={8}>
-  //     <YouTube {...props} />
-  //   </Box>
-  // ),
+  YouTube: (props: ComponentProps<typeof YouTube>) => (
+    <Box my={8}>
+      <YouTube {...props} />
+    </Box>
+  ),
 };
 
 export function MDXProvider({ children }: { children: ReactNode }) {

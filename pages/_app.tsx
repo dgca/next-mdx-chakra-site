@@ -6,8 +6,9 @@ import { Nav } from "@/components/Nav/Nav";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 import css from "highlight.js/lib/languages/css";
-import { MDXProvider } from "@/lib/md/client";
 import "highlight.js/styles/atom-one-dark.css";
+
+import { MDXProvider } from "@/lib/md/client";
 
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("css", css);
