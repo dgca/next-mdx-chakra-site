@@ -1,7 +1,9 @@
-# React Denver: 
+# React Denver - Creating a documentation website with Next.js, MDX, and Chakra UI
 
 - [Slides](https://gamma.app/docs/Creating-a-documentation-website-with-Nextjs-MDX-and-Chakra-UI-69ejmrhcodmibzr)
 - [Video recording](https://www.youtube.com/watch?v=I04VXQ4KDYY)
+
+---
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
